@@ -1,3 +1,4 @@
+<?php
 /**
 * 2007-2024 PrestaShop
 *
@@ -21,37 +22,13 @@
 *  @copyright 2007-2024 PrestaShop SA
 *  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*
-* Don't forget to prefix your containers with your own identifier
-* to avoid any conflicts with others containers.
 */
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT');
 
-let ts_elements = Array.from(document.getElementsByClassName("ts-element"));
-let ts_dots = Array.from(document.getElementsByClassName("ts-dot"));
-let maxSlides = 0;
-let actualSlide = 0;
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache');
 
-function slide() {
-    ts_elements.forEach(element =>{
-        element.style.transform = 'translateX(-' + actualSlide + '00%)';
-    });
-}
-
-function clearDots(dots) {
-    dots.forEach(dot => {
-        dot.classList.remove("ts-dot-active");
-    });
-}
-
-function setDots(dots) {
-    dots.forEach(dot => {
-        dot.addEventListener("click", () => {
-            clearDots(dots);
-            dot.classList.add("ts-dot-active");
-            actualSlide = dot.getAttribute("data-ts-dot");
-            slide();
-        });
-    })
-}
-
-setDots(ts_dots);
+header('Location: ../');
+exit;

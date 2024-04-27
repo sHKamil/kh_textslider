@@ -25,3 +25,66 @@
 * Don't forget to prefix your containers with your own identifier
 * to avoid any conflicts with others containers.
 */
+
+.ts-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.ts-elements-wrapper {
+    width: 85%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.ts-elements {
+    width: fit-content;
+    width: 300%;
+    display: flex;
+}
+
+.ts-element {
+    padding: 1%;
+    width: 100%;
+    transition: transform ease 1s;
+}
+
+.ts-content {
+    text-align: justify;
+}
+
+.ts-dots {
+    width: 15%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin:auto;
+    width: fit-content;
+}
+
+.ts-dot {
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    border-radius: 100%;
+    box-shadow: inset 0px 0px 5px -2px rgb(87, 87, 87);
+    transition: box-shadow .2s ease;
+}
+
+.ts-dot-active{
+    box-shadow: inset 0px 0px 5px 1px rgb(87, 87, 87);
+}
+
+@media only screen and (max-width: 768px) {
+    .ts-container {
+        flex-direction: column-reverse;
+    }
+
+    .ts-dots {
+        flex-direction: row;
+    }
+    .ts-elements-wrapper {
+        width: 100%;
+    }
+}
